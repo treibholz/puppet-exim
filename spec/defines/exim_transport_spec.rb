@@ -101,13 +101,6 @@ describe 'exim::transport', :type => :define do
         let(:params) { { :driver => 'appendfile' } }
         it { should contain_concat__fragment('transport-testtransport').without_content(/^\s+#{parameter}/) }
       end
-      [ '','x',[],{} ].each do |badtype|
-        context 'badtype:' + badtype.class.to_s do
-          let(:params) { { parameter => badtype, :driver => 'appendfile' } }
-          it { expect { should contain_concat__fragment('transport-testtransport') }.to raise_error(Puppet::PreformattedError,/is not a boolean/) }
-        end
-      end
-
     end
   end
 
