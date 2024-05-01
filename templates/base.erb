@@ -34,6 +34,8 @@ keep_environment =
 <% end -%>
 <% unless @ldap_default_servers.nil?               -%>ldap_default_servers               = <%= @ldap_default_servers.join(" : ") %>
 <% end -%>
+<% unless @ldap_ca_cert_file.nil?                  -%>ldap_ca_cert_file                  = <%= @ldap_ca_cert_file %>
+<% end -%>
 <% unless @chunking_advertise_hosts.nil?           -%>chunking_advertise_hosts           = <%= @chunking_advertise_hosts.join(" : ") %>
 <% end -%>
 <% unless @queue_smtp_domains.nil?       -%>queue_smtp_domains             = <%= @queue_smtp_domains.join(" : ") %>
