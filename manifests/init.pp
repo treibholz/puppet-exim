@@ -457,6 +457,9 @@
 # @param ldap_default_servers
 #   Array of LDAP servers (fqdn)
 #
+# @param ldap_ca_cert_file
+#   Path to file of CA certs to verify LDAP server’s, default is empty (use default CA)
+#
 # @param exim_heavy_package
 #   Name of the Debian exim-heavy package
 #
@@ -517,6 +520,7 @@ class exim (
   Optional[String] $ignore_bounce_errors_after,
   Optional[Array] $includes,
   Optional[Array[String]] $ldap_default_servers,
+  Optional[String] $ldap_ca_cert_file,
   Optional[Boolean] $local_from_check,
   Optional[Array[String]] $local_interfaces,
   Optional[Array[String]] $log_file_path,
